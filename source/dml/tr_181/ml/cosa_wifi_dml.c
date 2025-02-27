@@ -637,6 +637,25 @@ WiFi_GetParamStringValue
         return 0;
     }
 
+    if( AnscEqualString(ParamName, "AA", TRUE))
+    {
+        snprintf(pValue,*pUlSize,"%s",gcfg->AA);
+        return 0;
+    }
+
+
+    if( AnscEqualString(ParamName, "AB", TRUE))
+    {
+        snprintf(pValue,*pUlSize,"%s",gcfg->AB);
+        return 0;
+    }
+
+    if( AnscEqualString(ParamName, "AC", TRUE))
+    {
+        snprintf(pValue,*pUlSize,"%s",gcfg->AC);
+        return 0;
+    }
+
     if( AnscEqualString(ParamName, "X_RDK_RadioData", TRUE))
     {
 	CosaDmlWiFi_getWebConfig();
@@ -1292,6 +1311,36 @@ WiFi_SetParamStringValue
     {
         strncpy(gcfg->RadioPower,pString,sizeof(gcfg->RadioPower)-1);
         return TRUE;
+    }
+
+    rc = strcmp_s("AA", strlen("AA"), ParamName, &ind);
+    ERR_CHK(rc);
+    if((rc == EOK) && (!ind))
+    {
+        strncpy(gcfg->AA,pString,sizeof(gcfg->AA)-1);
+        return TRUE;
+    }
+
+    rc = strcmp_s("AB", strlen("AB"), ParamName, &ind);
+    ERR_CHK(rc);
+    if((rc == EOK) && (!ind))
+    {
+        strncpy(gcfg->AB,pString,sizeof(gcfg->AB)-1);
+        return TRUE;
+    }
+
+    rc = strcmp_s("AC", strlen("AC"), ParamName, &ind);
+    ERR_CHK(rc);
+    if((rc == EOK) && (!ind))
+    {
+      char *p= strchr(pString, 'D');
+      if(p != NULL)
+      {
+        strncpy(gcfg->AC,pString,sizeof(gcfg->AC)-1);
+        return TRUE;
+      }
+      else
+         return FALSE;
     }
 	
     rc = strcmp_s("X_CISCO_COM_ConfigFileBase64", strlen("X_CISCO_COM_ConfigFileBase64"), ParamName, &ind);

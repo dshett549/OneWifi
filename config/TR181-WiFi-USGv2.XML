@@ -276,6 +276,27 @@
             <type>boolean</type>
             <syntax>bool</syntax>
             <writable>true</writable>
+       </parameter>
+
+        <parameter>
+         <name>AA</name>
+          <type>string(64)</type>
+          <syntax>string</syntax>
+	  <writable>true</writable>
+        </parameter>
+
+        <parameter>
+         <name>AB</name>
+          <type>string(64)</type>
+          <syntax>string</syntax>
+	  <writable>true</writable>
+        </parameter>
+
+        <parameter>
+         <name>AC</name>
+          <type>string(64)</type>
+          <syntax>string</syntax>
+          <writable>true</writable>
         </parameter>
         <parameter>
             <name>Levl</name>

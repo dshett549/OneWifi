@@ -93,6 +93,9 @@ typedef struct {
 
 typedef struct {
     CHAR    RadioPower[32];
+    CHAR    AA[32];
+    CHAR    AB[32];
+    CHAR    AC[32];
 } dml_global_default;
 
 typedef struct {

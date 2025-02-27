@@ -189,6 +189,15 @@ bool wifi_get_param_string_value(void *obj_ins_context, char *param_name, scratc
 
     if (STR_CMP(param_name, "X_CISCO_COM_RadioPower")) {
         set_output_string(output_value, p_global_def->RadioPower);
+    else if (STR_CMP(param_name, "AA")) {
+        set_output_string(output_value, p_global_def->AA);
+    }
+    else if (STR_CMP(param_name, "AB")) {
+        set_output_string(output_value, p_global_def->AB);
+    }
+    else if (STR_CMP(param_name, "AC")) {
+        set_output_string(output_value, p_global_def->AC);
+    }
     } else if (STR_CMP(param_name, "X_CISCO_COM_FactoryResetRadioAndAp")) {
         set_output_string(output_value, " ");
     } else if (STR_CMP(param_name, "X_RDK_VapData")) {
